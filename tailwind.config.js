@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors:{
+        branco:{
+          100: "#EEEEEE",
+        }
       },
+      backgroundImage: {
+        'imagem-assitencia': "url('/assets/conserto-deluna.png')",
+        'imagem-manutencao': "url('/assets/manutencao-deluna.jpg')",
+        'imagem-desenvolvedor': "url('/assets/web-deluna.jpg')",
+        'imagem-tech': "url('/assets/tech-deluna.jpg')",
+      }
     },
   },
   plugins: [],

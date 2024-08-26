@@ -1,23 +1,24 @@
-import { BannerInicial } from "@/components/BannerInicial";
 import { Header } from "@/components/Header";
 import { BannerCards}  from "@/components/BannerCards";
-import { BannerSobre } from "@/components/BannerSobre";
 import { BannerServicos } from '@/components/BannerServicos';
 import { Footer } from "@/components/Footer";
 import { BotaoWhatsapp } from '@/components/BotaoWhatsapp/index';
+import { BannerInicialServicos } from '@/components/BannerInicioServicos';
+
+export const metadata = {
+  title: "Deluna System - Serviços",
+  description: "Serviços da Deluna System",
+};
 
 
-export default function Home() {
-
-
+export default function Servicos() {
   return (
-    <div>
+    <div className="">
       <Header/>
-      <main>
-        <BannerInicial/>
-        <BannerCards/>
-        <BannerSobre/>
+      <main className="">
+        <BannerInicialServicos/>
         <BannerServicos/>
+        <BannerCards/>
         <BotaoWhatsapp/>
       </main>
       <footer>

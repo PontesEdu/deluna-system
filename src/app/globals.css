@@ -2,32 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base{
+  body{
+    @apply text-black bg-branco-100;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components{
+  .deluna-h1{
+    @apply text-center text-3xl font-semibold mt-10 mb-5;
   }
+
+  .deluna-icon{
+    @apply text-white text-sm p-3 rounded-full shadow-xl text-nowrap uppercase flex items-center gap-1;
+  }
+
+  .deluna-estilo-menu{
+    @apply transform ease-in-out delay-75 duration-75 hover:border-b-2 hover:border-slate-900 pb-2 text-black text-lg hover:text-zinc-600;
+  }
+
+  .deluna-estilo-active{
+    @apply border-b-2 border-slate-900 pb-2 text-xl text-zinc-600;
+  }
+
+  .deluna-botao-menu{
+    @apply sm:hidden size-10 transform delay-100 duration-300 hover:scale-90 cursor-pointer;
+  }
+
+  .deluna-efeito-botao{
+    @apply transform ease-in-out delay-100 duration-300 hover:scale-90 cursor-pointer shadow-xl;
+  }
+
+  .deluna-card{
+    @apply bg-cover text-black rounded-3xl shadow-2xl delay-75 duration-500 ease-in-out flex flex-col sm:justify-center py-2 items-center gap-1 relative;
+  }
+
+  .deluna-card-h1{
+    @apply text-xl text-center sm:text-2xl font-bold;
+  }
+
+  .deluna-card-paragrafo{
+    @apply text-xl text-center rounded-2xl text-black font-semibold bg-zinc-300 bg-opacity-20;
+  }
+
+  .deluna-tamanho-grande-card{
+    @apply w-full h-[450px] lg:w-[600px] lg:h-[350px] justify-center p-2;
+  }
+
+  .deluna-tamanho-normal-card{
+    @apply w-full h-[170px] lg:w-[300px] lg:h-[300px];
+  }
+
+
 }
