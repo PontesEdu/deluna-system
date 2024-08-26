@@ -4,6 +4,7 @@ import { BannerServicos } from '@/components/BannerServicos';
 import { Footer } from "@/components/Footer";
 import { BotaoWhatsapp } from '@/components/BotaoWhatsapp/index';
 import { BannerInicialServicos } from '@/components/BannerInicioServicos';
+import { BannerSobre } from "@/components/BannerSobre";
 
 export const metadata = {
   title: "Deluna System - Serviços",
@@ -18,6 +19,7 @@ export default function Servicos() {
       <main className="">
         <BannerInicialServicos/>
         <BannerServicos/>
+        <BannerSobre/>
         <BannerCards/>
         <BotaoWhatsapp/>
       </main>

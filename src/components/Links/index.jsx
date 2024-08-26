@@ -1,9 +1,10 @@
-
+'use client'
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
 import { BotaoLink } from './BotaoLink';
+import { motion } from 'framer-motion';
 
 const links = [
   {
@@ -34,46 +35,23 @@ export const IconLinks = ({className, text}) => {
   return (
     <div className={`flex items-center my-5 gap-3 flex-wrap-reverse ${className}`}>
       
-      {links.map(link => (
-        <BotaoLink
-        href={link.https}
-        className={link.cor}
+      {links.map((link, index) => (
+        <motion.span
+        initial={{ opacity: 0 , scale: 0}}
+        whileInView={{opacity: 1, scale: 1}}
+        exit={{opacity: 0, scale: 0}}
+        transition={{duration: 0.3, delay: index * 0.2}}
         >
-          {link.icon}
-          {text && link.texto}
-        </BotaoLink>
+          <BotaoLink
+          href={link.https}
+          className={link.cor}
+          >
+            {link.icon}
+            {text && link.texto}
+          </BotaoLink>
+        </motion.span>
       ))}
-      
-      
-      
-      {/* <BotaoLink
-        href={"https://www.facebook.com/Deluna-System"}
-        className=" bg-gray-700"
-      >
-        <LuMail size={30} className="mx-2" />
-      </BotaoLink>
 
-      <BotaoLink
-        href={"https://www.facebook.com/Deluna-System"}
-        className="bg-blue-800"
-      >
-        <FaFacebook size={30} className="mx-2" />
-      </BotaoLink>
-
-      <BotaoLink
-        href={"https://www.instagram.com/delunasystem"}
-        className="bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af]"
-      >
-        <FaInstagram size={30} className="mx-2" />
-      </BotaoLink>
-
-      <BotaoLink
-        href={"https://wa.me/5511993084254"}
-        className="bg-green-500"
-      >
-        <FaWhatsapp size={30} className="mx-2" />
-        {texto}
-      </BotaoLink> */}
     </div>
   );
 };

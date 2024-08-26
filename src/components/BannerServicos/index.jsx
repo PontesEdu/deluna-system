@@ -1,8 +1,9 @@
-
+'use client'
 
 import Image from 'next/image';
 import { Chivo as FontParagrafo} from "next/font/google";
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const fontParagrafo = FontParagrafo({ 
   subsets: ["latin"],
@@ -14,11 +15,21 @@ export const BannerServicos = () =>{
   return(
     <section className="container mx-auto w-full min-h-[400px] flex flex-col lg:gap-6 px-5 pb-12">
       
-      <h1 className="deluna-h1">Conheça nossos Serviços Autorizados</h1>
+      <motion.h1 
+      initial={{opacity: 0, y: 100}} 
+      whileInView={{opacity: 1, y: 0}}
+      exit={{opacity: 0, y: 100}} 
+      transition={{duration: 0.7}}
+      className="deluna-h1">Conheça nossos Serviços Autorizados</motion.h1>
 
       <aside className="flex flex-col-reverse items-center lg:flex-row">
 
-        <div className='flex flex-1 flex-col gap-5'>
+        <motion.div
+        initial={{ opacity: 0 , x: -150}}
+        whileInView={{opacity: 1, x: 0}}
+        exit={{opacity: 0, x: -150}}
+        transition={{duration: 0.7, delay: 0.1}} 
+        className='flex flex-1 flex-col gap-5'>
           <h2 className="text-4xl text-start md:text-center mt-5">Serviços</h2>
 
           <p className={`text-lg ${fontParagrafo.className} indent-4`}>
@@ -32,16 +43,21 @@ export const BannerServicos = () =>{
           Para saber mais, acesse o nosso site no rodapé da pagina.
           </p>
           
-        </div>
+        </motion.div>
 
 
-        <div className='flex flex-1 justify-center'>
+        <motion.div
+        initial={{ opacity: 0 , y: 100, scale: 0.5 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 100, scale: 0.5 }}
+        transition={{ duration: 0.5 }} 
+        className='flex flex-1 justify-center'>
           <Link href={"https://www.dell.com"} target='_blank' rel="noopener noreferrer"  referrerpolicy="no-referrer">
             <Image width={450} height={450} src={'/assets/dell-deluna.png'} alt='Logo de representação da empresa Dell' className=' h-[180px] md:h-[300px] w-[500px]'/>
           </Link>
 
           <h1 className='sr-only'>Logo da Dell que somos representates representação da empresa</h1>
-        </div>
+        </motion.div>
       </aside>
     </section>
   )
