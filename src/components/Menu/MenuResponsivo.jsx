@@ -4,6 +4,7 @@ import Link from "next/link"
 import { XCircleIcon } from '@heroicons/react/24/outline'
 import Image from "next/image"
 import { BotaoWhats } from './../BotaoWhatsapp/BotaoWhats';
+import { motion } from 'framer-motion';
 
 
 export const MenuResponsivo = ({Paginas, isOpen, setIsOpen}) =>{
@@ -20,9 +21,14 @@ export const MenuResponsivo = ({Paginas, isOpen, setIsOpen}) =>{
 
       <ul className="flex items-start flex-col gap-7">
       {Paginas.map((pagina, index) => (
-        <li key={index} className="text-xl">
+        <motion.li 
+        initial={{ opacity: 0 , scale: 0}}
+        whileInView={{opacity: 1, scale: 1}}
+        exit={{opacity: 0, scale: 0}}
+        transition={{duration: 0.3, delay: index * 0.2}}
+        key={index} className="text-xl">
           <Link href={pagina.endereco} className="deluna-estilo-menu" rel="noopener noreferrer"  referrerpolicy="no-referrer">{pagina.pagina}</Link>
-        </li>
+        </motion.li>
       ))}
 
         <BotaoWhats className={"flex sm:hidden"}/>

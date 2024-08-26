@@ -4,6 +4,7 @@ import Link from "next/link"
 import { BotaoWhats } from './../BotaoWhatsapp/BotaoWhats';
 
 
+
 export const MenuNav = ({Paginas}) =>{
 
 
@@ -12,7 +13,9 @@ export const MenuNav = ({Paginas}) =>{
       <ul className="flex gap-8 flex-1">
         {Paginas.map((pagina, index) => (
           <li key={index}>
-            <Link rel="noopener noreferrer"  referrerpolicy="no-referrer" href={pagina.endereco} className="deluna-estilo-menu">{pagina.pagina}</Link>
+            <Link rel="noopener noreferrer"  referrerpolicy="no-referrer" href= {pagina.endereco} className="deluna-estilo-menu">
+              {pagina.pagina}
+            </Link>
           </li>
         ))}
       </ul>
